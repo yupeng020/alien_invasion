@@ -14,8 +14,8 @@
 
 import pygame
 
-class Settings:
 
+class Settings:
 
     def __init__(self):
         """初始化程序"""
@@ -24,8 +24,12 @@ class Settings:
         self.screen_height = 800
         self.bg_color = (200, 180, 230)
 
-
         # Ship settings
-        self.ship_speed_factor = 6
+        self.ship_speed_factor = 16
 
-    
+        # Bullet settings
+        self.bullet_speed_factor = 5
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = 60, 60, 60
+
