@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Settings	alien_invasion.py	/^from settings import Settings$/;"	i
+Settings	settings.py	/^class Settings:$/;"	c
+Ship	alien_invasion.py	/^from ship import Ship$/;"	i
+Ship	ship.py	/^class Ship():$/;"	c
+__init__	settings.py	/^    def __init__(self):$/;"	m	class:Settings
+__init__	ship.py	/^    def __init__(self, screen):$/;"	m	class:Ship
+blitme	ship.py	/^    def blitme(self):$/;"	m	class:Ship
+pygame	alien_invasion.py	/^import pygame$/;"	i
+pygame	game_functions.py	/^import pygame$/;"	i
+pygame	settings.py	/^import pygame$/;"	i
+pygame	ship.py	/^import pygame$/;"	i
+run_game	alien_invasion.py	/^def run_game():$/;"	f
+sys	alien_invasion.py	/^import sys$/;"	i
+sys	game_functions.py	/^import sys$/;"	i
