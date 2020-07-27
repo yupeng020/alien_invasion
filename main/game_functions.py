@@ -17,6 +17,8 @@ from bullet import Bullet
 
 from alien import Alien
 
+from time import sleep
+
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
     """Respond to keypresses."""
@@ -152,8 +154,31 @@ def change_fleet_direction(ai_settings, aliens):
     ai_settings.fleet_direction *= -1
 
 
-def update_aliens(ai_settings, aliens):
+def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
+    """Respond to ship being hit by alien."""
+    # Decrement ships_left
+    stats.ships_left -= 1
+
+    # Empty the list of aliens and bullets.
+    aliens.empty()
+    bullets.empty()
+
+    # Create a new fleet and center the ship.
+    create_fleet(ai_settings, screen, ship, aliens)
+    ship.center_ship()
+
+    # Pause.
+    sleep(0.99)
+
+
+def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     """Update the position of all aliens in the fleet."""
     """Check if the fleet is at the edge, and the update the position of all alien in the fleet."""
     check_fleet_edges(ai_settings, aliens)
     aliens.update()
+
+    # Look for alien-ship collisions.
+    if pygame.sprite.spritecollideany(ship, aliens):
+        # print("Ship has been distoryed, you stupid，game over，holy shit!")
+        ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+        print("二货，地球因为你的愚蠢而毁灭了！")
