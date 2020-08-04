@@ -62,7 +62,8 @@ def run_game():
 
             gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
             # print(len(bullets))       # 打印追踪子弹数量
-            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
+            gf.update_aliens(ai_settings, stats, screen, ship, aliens,
+                    bullets)
 
         gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, 
                 play_button)
