@@ -10,7 +10,11 @@
 
 函数文件及说明文档------
 
-类文件及说明文档--------ship.py, ship.txt
+类文件及说明文档--------ship.py, ship.txt记录飞船的类及其中的方法；alien.py,alien.txt记录外星人的类和方法；
+
+                     bullet.py, bullet.txt记录子弹的类，属性和方法；button.py，button.txt记录开始按钮的类和方法。
+
+                     scoreboard.py,scoreboard.txt记录积分系统的类和方法
 
 资源文件夹--------------image文件夹
 
