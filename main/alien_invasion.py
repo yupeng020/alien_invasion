@@ -38,7 +38,7 @@ def run_game():
     screen = pygame.display.set_mode((ai_settings.screen_width,
                                       ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
-    
+
     # Make the Play button.
     play_button = Button(ai_settings, screen, "Play")
 
@@ -65,11 +65,10 @@ def run_game():
 
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
             # print(len(bullets))       # 打印追踪子弹数量
-            gf.update_aliens(ai_settings, stats, screen, ship, aliens,
-                    bullets)
+            gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
-                play_button)
+                         play_button)
 
 
 run_game()

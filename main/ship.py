@@ -14,13 +14,16 @@
 
 import pygame
 
+from pygame.sprite import Sprite
+
 from settings import Settings
 
 
-class Ship():
+class Ship(Sprite):
 
     def __init__(self, ai_settings, screen):
         """初始化飞船并设定初始位置"""
+        super(Ship, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
         # 中英文输入法切换太他妈麻烦，以下注释用英文
