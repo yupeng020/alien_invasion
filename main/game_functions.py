@@ -69,7 +69,6 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
     """Start a new game when the player clicks play."""
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
-
         # Reset the game settings.
         ai_settings.initialize_dynamic_settings()
 
@@ -134,6 +133,7 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
             stats.score += ai_settings.alien_points * len(aliens)
 
             sb.prep_score()
+        check_high_score(stats, sb)
 
     if len(aliens) == 0:
         # Destroy exiting bullets, speed up game, and create new fleet
@@ -216,6 +216,7 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
         stats.game_active = False
         pygame.mouse.set_visible(True)
 
+
 def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
     """"Check if any aliens have reached the bottom of the screen."""
     screen_rect = screen.get_rect()
@@ -239,3 +240,10 @@ def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
         # print("Ship has been distoryed, you stupid，game over，holy shit!")
         ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
         print("二货，地球因为你的愚蠢而毁灭了！")
+
+
+def check_high_score(stats, sb):
+    """Check to see if there's a new high score."""
+    if stats.score > stats.high_score:
+        stats.high_score = stats.score
+        sb.prep_high_score()
